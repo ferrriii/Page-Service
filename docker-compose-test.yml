@@ -1,0 +1,29 @@
+# start using: docker-compose up -d
+# end using: docker-compose down
+version: '3.1'
+
+services:
+  api:
+    build: .
+    environment:
+      PORT: 8080 # the server port
+      DB_TEST_HOST: mysql
+      DB_TEST_USER: 'root'
+      DB_TEST_PASS: ''
+      DB_TEST_DATBASE: 'page'
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/usr/src/app
+    depends_on:
+      - mysql
+    command: [ "npm", "test" ]
+
+  mysql:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # create db every time container is build

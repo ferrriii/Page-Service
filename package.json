@@ -1,0 +1,56 @@
+{
+  "name": "page-service",
+  "version": "1.0.0",
+  "description": "a REST service to CRUD pages and images.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require @babel/register --exit",
+    "flow": "flow",
+    "serve": "npm run lint && npm run flow stop && npm run flow && babel-node src/index.js",
+    "dev": "nodemon --exec npm run serve",
+    "build": "npm run lint && babel src --out-dir dist",
+    "lint": "standard --fix",
+    "start": "npm run build && node dist/index.js",
+    "prepublish": "npm run build"
+  },
+  "keywords": [
+    "REST"
+  ],
+  "author": "Farshad",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/node": "^7.19.1",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-flow": "^7.18.6",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "flow-bin": "^0.190.0",
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.20",
+    "standard": "^17.0.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-flow"
+    ]
+  },
+  "standard": {
+    "parser": "@babel/eslint-parser",
+    "ignore": [
+      "dist/"
+    ],
+    "env": [
+      "mocha"
+    ]
+  }
+}

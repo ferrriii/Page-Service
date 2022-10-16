@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "ad4aebca-58fd-4341-8f44-e044904d7d4f",
+		"name": "Columns",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add column to page row",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pages/:pageId/rows/:rowId/columns/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pages",
+						":pageId",
+						"rows",
+						":rowId",
+						"columns",
+						""
+					],
+					"variable": [
+						{
+							"key": "pageId",
+							"value": "1"
+						},
+						{
+							"key": "rowId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete column",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pages/:pageId/rows/:rowId/columns/:columnId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pages",
+						":pageId",
+						"rows",
+						":rowId",
+						"columns",
+						":columnId"
+					],
+					"variable": [
+						{
+							"key": "pageId",
+							"value": "1"
+						},
+						{
+							"key": "rowId",
+							"value": "1"
+						},
+						{
+							"key": "columnId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

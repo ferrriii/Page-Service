@@ -1,0 +1,14 @@
+[ignore]
+./dist/.*
+.*/node_modules/resolve/.*
+./test/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]

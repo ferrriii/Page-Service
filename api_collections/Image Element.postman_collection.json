@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "6d0e0f08-f8fc-4ebf-91c9-5fb2300742f2",
+		"name": "Image Element",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add image element to column",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"imageId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pages/:pageId/rows/:rowId/columns/:columnId/images",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pages",
+						":pageId",
+						"rows",
+						":rowId",
+						"columns",
+						":columnId",
+						"images"
+					],
+					"variable": [
+						{
+							"key": "pageId",
+							"value": "1"
+						},
+						{
+							"key": "rowId",
+							"value": "1"
+						},
+						{
+							"key": "columnId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete image element",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"imageId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pages/:pageId/rows/:rowId/columns/:columnId/images/:imageElementId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pages",
+						":pageId",
+						"rows",
+						":rowId",
+						"columns",
+						":columnId",
+						"images",
+						":imageElementId"
+					],
+					"variable": [
+						{
+							"key": "pageId",
+							"value": "1"
+						},
+						{
+							"key": "rowId",
+							"value": "1"
+						},
+						{
+							"key": "columnId",
+							"value": "2"
+						},
+						{
+							"key": "imageElementId",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
